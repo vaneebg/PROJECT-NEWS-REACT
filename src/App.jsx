@@ -7,6 +7,8 @@ import ListNews from './components/ListNews/ListNews'
 import { GlobalProvider } from "./context/GlobalState";
 import Footer from './components/Footer/Footer';
 
+
+
 const App=()=> {
   return (
     <div className="App">
@@ -18,7 +20,7 @@ const App=()=> {
           <Route path="/form" element={<Form />} />
           <Route path="/listNews" element={<ListNews />} />
           </Routes>
-          <Footer/>
+          <Footer />
       </GlobalProvider>
 </BrowserRouter>
     </div>

@@ -1,0 +1,16 @@
+.social {
+    display: flex;
+    justify-content: center;
+    a {
+        cursor: pointer;
+        img {
+            width: 2em;
+            height: 2em;
+            padding: 8px;
+        }
+    }
+}
+
+.circle {
+    border-radius: 50px;
+}
