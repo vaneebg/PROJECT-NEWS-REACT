@@ -16,13 +16,7 @@ const Form=()=>{
          author:"",
          date:new Date()
        };
-   const [data, setData] = useState({
-     title: "",
-     section:"",
-     body: "",
-     author:"",
-     date:new Date()
-   });
+   const [data, setData] = useState(initialState);
    const [btnDisabled, setBtnDisabled] = useState(true);
    const [message, setMessage] = useState("");
    let navigate = useNavigate();
@@ -63,15 +57,14 @@ const Form=()=>{
          <fieldset>
            <legend><h3>Crea tu propia noticia</h3></legend>
            <div className="inputs">
- 
-       <input
+            <input
          type="text"
          placeholder="Título noticia"
          onChange={handleInputChange}
          value={data.title}
          name="title"
-       /><br/>
-       <select
+            /><br/>
+            <select
               value={data.section}
               onChange={handleInputChange}
               name="section"
@@ -84,7 +77,7 @@ const Form=()=>{
               <option>Tecnología</option>
               <option>Ciencia</option>
             </select><br/>
-       <textarea name="body" cols='40' rows='10'
+       <textarea name="body" cols='70' rows='10'
         placeholder="Pon aquí el cuerpo de la noticia"
         onChange={handleInputChange}
         value={data.body}
