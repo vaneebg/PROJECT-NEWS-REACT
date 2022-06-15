@@ -11,17 +11,28 @@ a {
     font-family: 'Lexend Exa', sans-serif;
 }
 
+.notices {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 .notice {
     display: flex;
-    border: 2px solid $grey1;
-    flex-wrap: wrap;
+    flex-direction: column;
+    border: 2px dotted $grey1;
     width: 40%;
     font-family: 'Iceland', cursive;
+    margin: 3px;
+    padding: 15px;
 }
 
 .content {
     display: flex;
+    flex-direction: row-reverse;
     img {
-        width: 10em;
+        height: 7em;
+        border-radius: 10px;
     }
 }

@@ -27,7 +27,9 @@ const ListNews = () => {
       </div>
     );
   });
-  return <div>{notice}</div>;
+  return (<div className="notices">
+  {notice}
+  </div>);
 };
 
 
