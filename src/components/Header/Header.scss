@@ -1,13 +1,32 @@
 @import '../../colors.scss';
+@import url('https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
 .nav {
     display: flex;
     position: sticky;
+    font-family: 'Euphoria Script', cursive;
     top: 1px;
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
-    background-color: $orange;
+    background-color: $grey1;
     padding-bottom: 1em;
+}
+
+h1 {
+    font-family: 'New Rocker', cursive;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+    span {
+        margin: 0;
+        font-family: 'New Rocker', cursive;
+    }
 }
 
 .nav {
@@ -15,7 +34,7 @@
         all: unset;
         font-size: 1.5em;
         cursor: pointer;
-        color: $brown;
+        color: $grey3;
         font-weight: bolder;
         font-size: 1.7em;
     }

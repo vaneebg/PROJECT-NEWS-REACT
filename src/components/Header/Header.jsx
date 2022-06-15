@@ -10,8 +10,10 @@ const Header=()=>{
 <Link to="/">Home</Link>
 <Link to="/listNews">Ver noticias</Link>
         </div>
-    <h1>Noticiario casero made in VB</h1>
-   
+        <div className="title">
+    <h1>Noticiario casero </h1>
+    <span>made in VB</span>
+    </div>
         </>
   )
 }

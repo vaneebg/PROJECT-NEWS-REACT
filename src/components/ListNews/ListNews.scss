@@ -1,0 +1,27 @@
+@import '../../colors.scss';
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100&display=swap');
+h2 {
+    font-family: 'Saira Stencil One', cursive;
+}
+
+a {
+    all: unset;
+    font-family: 'Lexend Exa', sans-serif;
+}
+
+.notice {
+    display: flex;
+    border: 2px solid $grey1;
+    flex-wrap: wrap;
+    width: 40%;
+    font-family: 'Iceland', cursive;
+}
+
+.content {
+    display: flex;
+    img {
+        width: 10em;
+    }
+}

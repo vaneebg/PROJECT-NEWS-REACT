@@ -1,3 +1,4 @@
+import './ListNews.scss'
 import './ListNews'
 import React, { useContext, useEffect } from "react";
 import { GlobalContext } from "../../context/GlobalState";
@@ -8,11 +9,9 @@ const ListNews = () => {
     getNews();
   }, []);
   const notice = news.map((notice) => {
-   
-    console.log(notice.media.length !== 0)
-    return (
+       return (
       <div className='notice' key={notice.id}>
-        <h1>{notice.title}</h1>
+        <h2>{notice.title}</h2>
         <span>{notice.section}</span>
        
         <span>{notice.updated}</span>
@@ -22,7 +21,8 @@ const ListNews = () => {
         }
         <p>{notice.abstract}</p>
         </div>
-        <span>{notice.url}</span>
+        <a href={notice.url}>Link a la noticia original</a>
+    
         
       </div>
     );
