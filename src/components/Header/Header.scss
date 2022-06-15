@@ -1,3 +1,4 @@
+@import '../../colors.scss';
 .nav {
     display: flex;
     position: sticky;
@@ -5,7 +6,7 @@
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
-    background-color: rgba(201, 91, 17, 0.589);
+    background-color: $marron;
     padding-bottom: 1em;
 }
 
@@ -14,7 +15,7 @@
         all: unset;
         font-size: 1.5em;
         cursor: pointer;
-        color: brown;
+        color: $orange;
         font-weight: bolder;
         font-size: 1.7em;
     }
