@@ -1,12 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+@import '../../colors.scss';
+h2 {
+    font-family: 'Saira Stencil One', cursive;
+}
+
 fieldset {
-    width: 50%;
+    padding: 0px 80px;
+    background-color: $whitesemi;
+}
+
+label {
+    font-family: 'Iceland', cursive;
+    font-size: 1.5em;
 }
 
 .input {
-    font-size: 1em;
+    font-family: 'Iceland', cursive;
+    font-size: 1.2em;
+}
+
+#author {
+    width: 7em;
 }
 
 .form {
     display: flex;
     justify-content: center;
+}
+
+button {
+    font-family: 'Saira Stencil One', cursive;
+    margin: 10px;
+    padding: 0 20px;
+    font-size: 1.5em;
 }

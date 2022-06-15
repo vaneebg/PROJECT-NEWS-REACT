@@ -56,12 +56,12 @@ const Form=()=>{
     <div className="form">
      <form onSubmit={handleSubmit}>
          <fieldset>
-           <legend><h3>Crea tu propia noticia</h3></legend>
+           <legend><h2>Crea tu propia noticia</h2></legend>
            <div className="inputs">
             <label htmlFor="title">Título de la noticia:</label><br/>
             <input id='title'className='input'
          type="text"
-         placeholder="Título noticia"
+         placeholder="Ej:Tiburones asesinos"
          onChange={handleInputChange}
          value={data.title}
          name="title"
@@ -81,7 +81,7 @@ const Form=()=>{
             </select><br/>
             <label htmlFor="body">Cuerpo de la noticia:</label><br/>
        <textarea id='body'name="body" cols='70' rows='10'
-        placeholder="Pon aquí el cuerpo de la noticia"
+        placeholder="Ej:Ayer en playa paraíso una manada de tiburones asestó un duro golpe..."
         onChange={handleInputChange}
         className='input'
         value={data.body}
@@ -89,7 +89,7 @@ const Form=()=>{
         <label htmlFor="author">Nombre:</label><br/>
         <input id='author'
          type="text"
-         placeholder="Autor"
+         placeholder="Ej:Pepito Perez"
          className='input'
          onChange={handleInputChange}
          value={data.author}
