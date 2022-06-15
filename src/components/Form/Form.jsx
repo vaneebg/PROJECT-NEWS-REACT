@@ -17,7 +17,8 @@ const Form=()=>{
    const [data, setData] = useState({
      title: "",
      body: "",
-     author:""
+     author:"",
+     date:new Date()
    });
    const [btnDisabled, setBtnDisabled] = useState(true);
    const [message, setMessage] = useState("");
