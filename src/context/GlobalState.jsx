@@ -1,9 +1,7 @@
 import { createContext, useReducer } from "react";
 import AppReducer from "./AppReducer";
 import axios from "axios"
-// const APIKEY = process.env.APIKEY
-// const holi = process.env.REACT_APP_API_URL 
-
+const APIKEY = process.env.REACT_APP_APIKEY
 
 
 const initialState = {
@@ -16,8 +14,10 @@ export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   const getNews = async () => {
-    let url='https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=hPvzPb8ldJH83JIhA1raARVyXGCWAms5'
+   
+    let url=`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${APIKEY}`
     const result = await axios.get(url);
+    console.log(result.data.results)
     dispatch({
       type: "GET_NEWS",
       payload: result.data.results 
