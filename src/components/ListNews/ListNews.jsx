@@ -11,7 +11,12 @@ const ListNews = () => {
   const notice = news.map((notice) => {
     return (
       <div key={notice.id}>
-        <h1>{notice.abstract}</h1>
+        <h1>{notice.title}</h1>
+        <span>{notice.section}</span>
+        <span>{notice.updated}</span>
+        <p>{notice.abstract}</p>
+        <span>{notice.url}</span>
+        
       </div>
     );
   });
