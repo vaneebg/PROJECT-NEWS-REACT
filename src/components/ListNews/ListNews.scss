@@ -9,6 +9,9 @@ h2 {
 a {
     all: unset;
     font-family: 'Lexend Exa', sans-serif;
+    font-weight: bolder;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .notices {
@@ -19,6 +22,7 @@ a {
 }
 
 .notice {
+    background-color: rgba(255, 255, 255, 0.445);
     display: flex;
     flex-direction: column;
     border: 2px dotted $grey1;
@@ -26,6 +30,7 @@ a {
     font-family: 'Iceland', cursive;
     margin: 3px;
     padding: 15px;
+    border-radius: 10px;
 }
 
 .content {
