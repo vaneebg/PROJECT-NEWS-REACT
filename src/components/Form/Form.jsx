@@ -1,4 +1,5 @@
 import './Form'
+import './Form.scss'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -27,7 +28,6 @@ const Form=()=>{
  
    const handleInputChange = (e) => {
      if ( data.title ==="" || data.body==="" || data.author=== "") {
-       // NO VAAA
 
        setMessage("Debes rellenar los tres campos");
        setBtnDisabled(true);
@@ -53,22 +53,24 @@ const Form=()=>{
      }, 4000);
    };
    return (
+    <div className="form">
      <form onSubmit={handleSubmit}>
          <fieldset>
            <legend><h3>Crea tu propia noticia</h3></legend>
            <div className="inputs">
-            <input
+            <label htmlFor="title">Título de la noticia:</label><br/>
+            <input id='title'className='input'
          type="text"
          placeholder="Título noticia"
          onChange={handleInputChange}
          value={data.title}
          name="title"
             /><br/>
-            <select
+             <label htmlFor="section">Escoja la sección a la que pertenecerá:</label><br/>
+            <select id='section'className='input section'
               value={data.section}
               onChange={handleInputChange}
               name="section"
-              className="section"
             >
               <option>Salud</option>
               <option>Deportes</option>
@@ -77,14 +79,18 @@ const Form=()=>{
               <option>Tecnología</option>
               <option>Ciencia</option>
             </select><br/>
-       <textarea name="body" cols='70' rows='10'
+            <label htmlFor="body">Cuerpo de la noticia:</label><br/>
+       <textarea id='body'name="body" cols='70' rows='10'
         placeholder="Pon aquí el cuerpo de la noticia"
         onChange={handleInputChange}
+        className='input'
         value={data.body}
       /><br/>
-        <input
+        <label htmlFor="author">Nombre:</label><br/>
+        <input id='author'
          type="text"
          placeholder="Autor"
+         className='input'
          onChange={handleInputChange}
          value={data.author}
          name="author"
@@ -97,6 +103,7 @@ const Form=()=>{
        {message}
        
      </form>
+     </div>
    );
 }
 
