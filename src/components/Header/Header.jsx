@@ -2,7 +2,7 @@ import './Header'
 
 const Header=()=>{
   return (
-    <div>Header</div>
+    <h1>Este es el titulo</h1>
   )
 }
 
