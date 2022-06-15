@@ -5,11 +5,11 @@
     display: flex;
     position: sticky;
     font-family: 'Euphoria Script', cursive;
-    top: 1px;
+    top: 0;
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
-    background-color: $grey1;
+    background-color: $greysemi;
     padding-bottom: 1em;
 }
 
@@ -30,12 +30,14 @@ h1 {
 }
 
 .nav {
+    display: flex;
+    padding: 12px;
     a {
         all: unset;
         font-size: 1.5em;
         cursor: pointer;
         color: $grey3;
         font-weight: bolder;
-        font-size: 1.7em;
+        font-size: 2em;
     }
 }

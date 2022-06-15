@@ -22,7 +22,7 @@ a {
 }
 
 .notice {
-    background-color: rgba(255, 255, 255, 0.445);
+    background-color: $semitransparent;
     display: flex;
     flex-direction: column;
     border: 2px dotted $grey1;
