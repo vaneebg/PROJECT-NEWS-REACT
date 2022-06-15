@@ -11,11 +11,14 @@ const Form=()=>{
  
  const initialState = {
          title: "",
+         section:"",
          body: "",
          author:"",
+         date:new Date()
        };
    const [data, setData] = useState({
      title: "",
+     section:"",
      body: "",
      author:"",
      date:new Date()
@@ -52,7 +55,7 @@ const Form=()=>{
      clearState();
      setMessage("noticia creada con éxito");
      setTimeout(() => {
-       navigate("/");
+       navigate("/listNews");
      }, 4000);
    };
    return (
@@ -68,6 +71,19 @@ const Form=()=>{
          value={data.title}
          name="title"
        /><br/>
+       <select
+              value={data.section}
+              onChange={handleInputChange}
+              name="section"
+              className="section"
+            >
+              <option>Salud</option>
+              <option>Deportes</option>
+              <option>Política</option>
+              <option>Ocio</option>
+              <option>Tecnología</option>
+              <option>Ciencia</option>
+            </select><br/>
        <textarea name="body" cols='40' rows='10'
         placeholder="Pon aquí el cuerpo de la noticia"
         onChange={handleInputChange}
