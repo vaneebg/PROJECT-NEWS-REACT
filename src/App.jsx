@@ -7,7 +7,7 @@ import ListNews from './components/ListNews/ListNews'
 import { GlobalProvider } from "./context/GlobalState";
 import Footer from './components/Footer/Footer';
 
-
+const links=['Información','Blog','Empleo','Ayuda','API','Privacidad','Condiciones','Cuentas destacadas','Hashtags','Ubicaciones']
 
 const App=()=> {
   return (
@@ -20,7 +20,7 @@ const App=()=> {
           <Route path="/form" element={<Form />} />
           <Route path="/listNews" element={<ListNews />} />
           </Routes>
-          <Footer />
+          <Footer info='Hecho por Vanesa Beltrán ' copy='Junio 2022 ©' links={links}/>
       </GlobalProvider>
 </BrowserRouter>
     </div>

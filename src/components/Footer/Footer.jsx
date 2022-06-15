@@ -6,9 +6,14 @@ import img3 from '../assets/iconlinked.png'
 import img4 from '../assets/iconoig.png'
 import img5 from '../assets/icongit.png'
 
-const Footer=()=>{
-  
-  return (
+const Footer=({info,copy,links})=>{
+  const listLinks=links.map((link=><a href="">{link}</a>))
+  return (<div className='footer'>
+    <div className="contentInfo">
+    <div className="info">
+      <span>{info}</span>
+      <span>{copy}</span>
+    </div>
     <div className="social">
 <a href="http://"><img className='circle' src={img1} alt="iconface" /></a>
 <a href="http://"><img src={img2} alt="icontwitter" /></a>
@@ -17,7 +22,11 @@ const Footer=()=>{
 <a href="https://github.com/vaneebg"><img className='circle' src={img5} alt="icongit" /></a>
   
    </div>
-
+   </div>
+  <div className="links">
+   {listLinks}
+   </div>
+   </div>
   )
 }
 

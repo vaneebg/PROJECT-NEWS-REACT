@@ -11,6 +11,34 @@
     }
 }
 
+.info {
+    span {
+        font-family: arial;
+        font-style: italic;
+    }
+}
+
 .circle {
     border-radius: 50px;
+}
+
+.footer {
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    a {
+        padding: 10px;
+    }
+}
+
+.contentInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
