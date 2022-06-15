@@ -7,14 +7,21 @@ const ListNews = () => {
   useEffect(() => {
     getNews();
   }, []);
-  console.log(news)
   const notice = news.map((notice) => {
+   
+    console.log(notice.media.length !== 0)
     return (
-      <div key={notice.id}>
+      <div className='notice' key={notice.id}>
         <h1>{notice.title}</h1>
         <span>{notice.section}</span>
+       
         <span>{notice.updated}</span>
+        <div className="content">
+        {
+          notice.media.length !== 0 ? <img src={notice.media[0]["media-metadata"][0].url} alt='img'/> : null
+        }
         <p>{notice.abstract}</p>
+        </div>
         <span>{notice.url}</span>
         
       </div>

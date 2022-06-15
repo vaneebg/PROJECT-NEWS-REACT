@@ -17,15 +17,14 @@ export const GlobalProvider = ({ children }) => {
    
     let url=`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${APIKEY}`
     const result = await axios.get(url);
-    console.log(result.data.results)
     dispatch({
       type: "GET_NEWS",
       payload: result.data.results 
     });
   };
   return (
-    <GlobalContext.Provider
-      value={{
+    <GlobalContext.Provider 
+    value={{
         news: state.news,
         getNews,
       }}
