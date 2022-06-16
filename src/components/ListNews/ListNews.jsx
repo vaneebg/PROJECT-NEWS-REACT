@@ -16,9 +16,7 @@ const ListNews = () => {
        
         <span>{notice.updated}</span>
         <div className="content">
-        {
-          notice.media.length !== 0 ? <img src={notice.media[0]["media-metadata"][0].url} alt='img'/> : null
-        }
+        
         <p>{notice.abstract}</p>
         </div>
         <a href={notice.url}>Link a la noticia original</a>

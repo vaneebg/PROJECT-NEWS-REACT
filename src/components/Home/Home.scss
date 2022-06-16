@@ -1,9 +1,32 @@
+@import '../../colors.scss';
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100&display=swap');
+h2 {
+    font-family: 'Saira Stencil One', cursive;
+}
+
 .noticeInvent {
+    background-color: $semitransparent;
     display: flex;
     flex-direction: column;
+    border: 2px dotted $grey1;
+    width: 40%;
+    font-family: 'Iceland', cursive;
+    margin: 3px;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 .content {
     display: flex;
     justify-content: center;
+}
+
+.print {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 3em;
 }
