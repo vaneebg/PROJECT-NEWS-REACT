@@ -1,5 +1,5 @@
 #  <center> :card_index: Proyecto React: Web de noticias :card_index: </center> 
-``
+
  ## :clipboard: Índice :clipboard:
 
  - [Sobre el proyecto](#bookmarktabs-sobre-el-proyecto-bookmarktabs)
@@ -30,6 +30,8 @@
 - [Futuras implementaciones](#blacknib-futuras-implementaciones-blacknib)
 
 - [Autor](#raisedhands-autor-raisedhands)
+
+------------------
 
 # :bookmark_tabs: Sobre el proyecto :bookmark_tabs:
 
@@ -125,7 +127,7 @@ Componente formulario:
 ----------
 # :green_book: Descripción del proyecto :green_book:
 ## 1. Componentes
-Son un total de 5 componentes:
+Son un total de 5 componentes, cada uno de ellos enlazado a su fichero scss:
 
 
 Dos de ellos se encuentran fijados para aparecer siempre independientemente del componente al que te hayas dirigido:

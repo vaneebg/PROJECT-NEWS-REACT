@@ -7,7 +7,7 @@ import img4 from '../assets/iconoig.png'
 import img5 from '../assets/icongit.png'
 
 const Footer=({info,copy,links})=>{
-  const listLinks=links.map((link=><a href="">{link}</a>))
+  const listLinks=links.map((link,indice)=>{<a key={indice} href="">{link}</a>})
   return (
 <div className='footer'>
   <div className="contentInfo">

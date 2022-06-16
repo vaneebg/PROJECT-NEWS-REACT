@@ -2,22 +2,23 @@ import './Home'
 import './Home.scss'
 import gif from './assets/giphy.gif'
 import lines from './assets/lines.gif'
+
 const Home=()=>{
 
 const newsBack = JSON.parse(localStorage.getItem("NEWS"));
-const listNews=newsBack.map((notice) => {
-  return ( 
-<div className="noticeInvent">
+const listNews=newsBack.map((notice, indice) => {
+return (
+  <div key={indice} className="noticeInvent">
       <h2>{notice.title}</h2>
       <span>{notice.section}</span>
       <p className="author">{notice.author}</p>
       <span>{notice.date}</span>
-  <div className="content">
-        <p>{notice.body}</p>
-  </div>
-</div>
-)})
+    <div className="content">
 
+       <p>{notice.body}</p>
+    </div>
+  </div>
+)})
   return (<>
     <span className='titleHome'>Noticias creadas por nuestros usuarios:</span>
     <div className='home'>

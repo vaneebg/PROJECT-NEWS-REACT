@@ -47,7 +47,7 @@ let navigate = useNavigate();
    };
 return (
   <div className="form">
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} encType="multipart/form-data">
       <fieldset>
         <legend><h2>Crea tu propia noticia</h2></legend>
         <div className="inputs">
