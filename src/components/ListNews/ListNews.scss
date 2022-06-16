@@ -34,6 +34,10 @@ a {
     border-radius: 10px;
 }
 
+.notice:hover {
+    background-color: white;
+}
+
 .content {
     display: flex;
     flex-direction: row-reverse;

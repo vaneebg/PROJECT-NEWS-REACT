@@ -11,7 +11,7 @@ const Footer=({info,copy,links})=>{
   return (<div className='footer'>
     <div className="contentInfo">
     <div className="info">
-      <span>{info}</span>
+      <span>{info}. </span>
       <span>{copy}</span>
     </div>
     <div className="social">
