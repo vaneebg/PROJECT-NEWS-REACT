@@ -15,7 +15,7 @@ let writeNew = JSON.parse(localStorage.getItem("NEWS")) || [];
          body: "",
          author:"",
          img:"",
-         date:new Date()
+         date:new Date().toUTCString()
        };
   const [data, setData] = useState(initialState);
   const [btnDisabled, setBtnDisabled] = useState(true);
