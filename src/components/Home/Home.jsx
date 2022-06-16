@@ -6,6 +6,7 @@ import lines from '../../assets/lines.gif'
 const Home=()=>{
 
 const newsBack = JSON.parse(localStorage.getItem("NEWS"));
+
 const listNews=newsBack.map((notice, indice) => {
 return (
   <div key={indice} className="noticeInvent">
@@ -19,6 +20,7 @@ return (
     </div>
   </div>
 )})
+
   return (<>
     <span className='titleHome'>Noticias creadas por nuestros usuarios:</span>
     <div className='home'>

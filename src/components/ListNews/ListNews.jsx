@@ -4,7 +4,9 @@ import React, { useContext, useEffect } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 
 const ListNews = () => {
+
   const { news, getNews } = useContext(GlobalContext);
+
   useEffect(() => {
     getNews();
   }, []);
@@ -25,6 +27,7 @@ const ListNews = () => {
       </div>
     );
   });
+  
   return (
   <div className="notices">
     {notice}

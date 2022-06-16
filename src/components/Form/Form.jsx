@@ -4,11 +4,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Form=()=>{
+
 let writeNew = JSON.parse(localStorage.getItem("NEWS")) || [];
   const saveData=() =>{
        writeNew.push(data);
        localStorage.setItem("NEWS", JSON.stringify(writeNew));
      }
+
  const initialState = {
          title: "",
          section:"",
@@ -17,12 +19,14 @@ let writeNew = JSON.parse(localStorage.getItem("NEWS")) || [];
          img:"",
          date:new Date().toUTCString()
        };
+
   const [data, setData] = useState(initialState);
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
   
 let navigate = useNavigate();
   const clearState = () => {setData({ ...initialState });};
+
   const handleInputChange = (e) => {
      if ( data.title ==="" || data.body==="" || data.author=== "") {
        setMessage("Debes rellenar los tres campos");
@@ -36,6 +40,7 @@ let navigate = useNavigate();
        [e.target.name]: e.target.value,
      });
    };
+
   const handleSubmit = (e) => {
      e.preventDefault();
      saveData()
@@ -45,6 +50,7 @@ let navigate = useNavigate();
        navigate("/");
      }, 4000);
    };
+   
 return (
   <div className="form">
     <form onSubmit={handleSubmit} encType="multipart/form-data">
