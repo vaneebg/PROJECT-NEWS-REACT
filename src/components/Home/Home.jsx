@@ -1,9 +1,9 @@
 import './Home'
-
+import './Home.scss'
 const Home=()=>{
 
 const newsBack = JSON.parse(localStorage.getItem("NEWS"));
-const listNews=newsBack.map((notice) => { return ( <div className='noticeInvent'>
+const listNews=newsBack.map((notice) => { return ( <div className="noticeInvent">
       <h2>{notice.title}</h2>
       <span>{notice.section}</span>
       <p>{notice.author}</p>
@@ -12,7 +12,8 @@ const listNews=newsBack.map((notice) => { return ( <div className='noticeInvent'
 
       <p>{notice.body}</p>
       </div>
-      </div>)
+      </div>
+      )
       })
 
   return (

@@ -61,7 +61,7 @@ const Form=()=>{
             <label htmlFor="title">Título de la noticia:</label><br/>
             <input id='title'className='input'
          type="text"
-         placeholder="Ej:Tiburones asesinos"
+         placeholder="Ej:Delfines asesinos"
          onChange={handleInputChange}
          value={data.title}
          name="title"
