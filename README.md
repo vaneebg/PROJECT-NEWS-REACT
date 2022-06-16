@@ -137,6 +137,8 @@ Componente formulario:
 
 ![foto](./toReadme/form.png)
 
+Los cursores también se han personalizado para añadirle ese toque personal friki. En este proyecto he elegido a Zelda, por un lado la espada como cursor y por otro la cara de Link como pointer :smile:
+
 ----------
 # :green_book: Descripción del proyecto :green_book:
 
