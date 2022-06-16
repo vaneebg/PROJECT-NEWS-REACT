@@ -88,7 +88,7 @@ Se ha trabajado en diversas ramas de Git para continuar con el proceso de aprend
     - [X] /form. Formulario para crear noticia
     - [X] /list. Lista detallada de noticias
 
-- [X]Componentes mínimos
+- [X] Componentes mínimos
     - [X] Header
     - [X] Home.
     - [X] Form.
