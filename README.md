@@ -16,6 +16,15 @@
 
 - [Descripción del proyecto](#greenbook-descripción-del-proyecto-greenbook)
 
+    - [API](#1-api)
+
+    - [Componentes](#2-componentes)
+
+    - [Context](#2-componentes)
+
+    - [React router](#4-react-router)
+
+
 - [Retos presentados](#dart-retos-presentados-dart)
 
     - [Imágenes noticias](#imágenes-noticias)
@@ -130,7 +139,31 @@ Componente formulario:
 
 ----------
 # :green_book: Descripción del proyecto :green_book:
-## 1. Componentes
+
+## 1. API
+Lo primero que debemos hacer es registrarnos en [Nytimes](https://developer.nytimes.com/apis). Después, justo como indica la documentación, nos dirigimos al apartado de perfil, a Apps y creamos una. Ahí al final, debemos activar qué secciones queremos descargar de la propia API:
+
+![foto](./toReadme/api.png)
+
+En este caso, nos vamos a traer las noticias más populares de NYT. 
+En cuanto a cómo acceder, en el apartado APIs de la propia web, seleccionando lo que nos interese, te muestran diferentes links con los que traer esa información. Lo único que hay que hacer es copiar nuestra key(la tenemos en el perfil) en la sección del link que pone 'yourkey'
+`````
+https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=yourkey
+``````
+
+Finalmente, haremos una petición Axios a ese mismo enlace:
+
+``````
+let url=`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${APIKEY}`
+    const result = await axios.get(url);
+``````
+
+Esta llamada la encontraremos dentro de la carpeta context, en GlobalState, dentro de la función getNews.
+
+
+----------
+
+## 2. Componentes
 Son un total de 5 componentes, cada uno de ellos enlazado a su fichero scss:
 
 
@@ -155,19 +188,60 @@ let writeNew = JSON.parse(localStorage.getItem("NEWS")) || [];
 const newsBack = JSON.parse(localStorage.getItem("NEWS"));
 ````
 
-## 2.Context
-La parte fundamental sobre la que se sustenta el trabajo. Con el objetivo de globalizar la información (en este caso la API) para poderla utilizar luego en cualquier de nuestros componentes gracias a GlobalProvider. En este caso, solo hacemos una llamada a la API para conseguir las noticias, mediante esta función:
+-------
+
+## 3. Context
+La parte fundamental sobre la que se sustenta el trabajo. Tiene como objetivo globalizar la información (en este caso la que obtenemos de la API) para poderla utilizar luego en cualquier de nuestros componentes gracias a GlobalProvider. 
+Aquí tenemos una función principal que es GlobalProvider, que engloba otra función llamada getNews, que se encargará de la llamada a la API y el almacenamiento de la información en nuestro initialState.
+
+Primero, importamos todo lo que vamos a necesitar en las primeras lineas y después definimos un estado inicial donde news será una array vacía:
+
+``````
+const initialState = {
+  news: []
+};
+``````
+
+Creamos nuestro Context y GlobalProvider, donde entrará por parámetro 'children', que no son más que todos los componentes hijos que podrán heredar esta información global.
+Después desestructuramos useReducer(que usará como parámetros AppReducer e initialState) en state y dispatch.
+Por un lado, AppReducer tiene la función news mediante dos parámetros (state y action), continuando con un switch en este caso de un solo elemento que es GET_NEWS. Sin embargo, si por ejemplo tuviésemos un CRUD, aquí irían el resto de casos como por ejemplo PUT_NEWS:
+
+```````
+const news = (state, action) => {
+    switch (action.type) {
+        case "GET_NEWS":
+            return {
+                ...state,
+                news: action.payload,
+            };
+        default:
+            return state;
+    }
+};
+export default news;
+````````
+
+A continuación creamos la función getNews en este caso, ya que queremos conseguir la información de la API, y en dispatch le ponemos que el tipo de 'envío' de la información va a ser GET_NEWS, y que su 'carga' será en este caso result.data.results. Ese mismo tipo es el que designa que en AppReducer se escoja un caso u otro, con lo cual entra en GET_NEWS, que te devolverá el estado ya cambiado, y las news serán esa misma 'carga' que hemos definido en payload.
+
+Finalmente lo que retorna la función GlobalContext.Provider es un valor, compuesto por news, que será el estado cambiado de news, es decir, la array ya llena con nuestra información, y por la propia función getNews.
+Por último, dentro de GlobalContext tendremos el parámetro que le pusimos a esta función, 'children', es decir, todos los componentes que se encuentren dentro de Global provider en App.jsx, compartirán esta información.
+
+-----------
+
+## 4. React router
+Para la utilización de rutas en forma de Link en el proyecto, se instala este componente y se importa en nuestra App.jsx:
+``````
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+``````
+Después, debemos poner todos los componentes entre los que queramos navegar dentro de estas etiquetas(<BrowserRouter>) y los path a las rutas dentro de Routes. Gracias a esto, ahora podemos navegar entre los componentes, un ejemplo de ello es la barra de navegación del componente Header`:
 `````
-const getNews = async () => {
-   
-    let url=`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${APIKEY}`
-    const result = await axios.get(url);
-    dispatch({
-      type: "GET_NEWS",
-      payload: result.data.results 
-    });
-  };
-  ``````
+<div className="nav">
+      <Link to="/form">Crea tu noticia</Link>
+      <Link to="/">Home</Link>
+      <Link to="/listNews">Ver noticias</Link>
+  </div>
+``````
+
   --------------------
 
 # :dart: Retos presentados :dart:
