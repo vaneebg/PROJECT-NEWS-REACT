@@ -11,7 +11,7 @@ a {
     font-family: 'Lexend Exa', sans-serif;
     font-weight: bolder;
     text-decoration: underline;
-    cursor: pointer;
+    cursor: url('../../assets/click2.png'), pointer;
 }
 
 .notices {
@@ -38,6 +38,10 @@ a {
         font-weight: 900;
         text-shadow: 1px 1px black;
     }
+}
+
+.notice:hover {
+    cursor: url('../../assets/click2.png'), pointer;
 }
 
 .notice:hover {

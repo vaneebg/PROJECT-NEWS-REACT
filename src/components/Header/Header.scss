@@ -48,9 +48,15 @@ h1 {
     a {
         all: unset;
         font-size: 1.5em;
-        cursor: pointer;
+        cursor: url('../../assets/click2.png'), pointer;
         color: $grey3;
         font-weight: bolder;
         font-size: 2em;
+        padding: 0 9px;
+        border-radius: 50px;
+    }
+    a:hover {
+        background-color: $grey1;
+        color: $grey3;
     }
 }

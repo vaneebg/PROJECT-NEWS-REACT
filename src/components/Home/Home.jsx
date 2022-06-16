@@ -1,6 +1,6 @@
 import './Home'
 import './Home.scss'
-import gif from '../../assets/giphy.gif'
+import groot from '../../assets/groot.gif'
 import lines from '../../assets/lines.gif'
 
 const Home=()=>{
@@ -23,13 +23,13 @@ return (
     <span className='titleHome'>Noticias creadas por nuestros usuarios:</span>
     <div className='home'>
       <div className="image">
-        <img src={gif} alt="" />
+        <img className='groot' src={groot} alt="" />
       </div>
       <div className="print">
           {listNews}
       </div>
       <div className="image">
-      <img src={gif} alt="" />
+      <img className='groot' src={groot} alt="" />
       </div>
     </div>
     <div className="finalimg">
