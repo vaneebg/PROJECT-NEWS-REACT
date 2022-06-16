@@ -8,7 +8,7 @@ const newsBack = JSON.parse(localStorage.getItem("NEWS"));
 const listNews=newsBack.map((notice) => {return ( <div className="noticeInvent">
        <h2>{notice.title}</h2>
        <span>{notice.section}</span>
-       <p>{notice.author}</p>
+       <p className="author">{notice.author}</p>
        <span>{notice.date}</span>
       <div className="content">
         

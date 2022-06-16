@@ -1,6 +1,16 @@
 @import '../../colors.scss';
 @import url('https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
+%stroke {
+    -webkit-text-stroke: 0.3px white;
+    -moz-text-stroke: 0.3px white;
+}
+
+%font-title {
+    font-family: 'New Rocker', cursive;
+    font-weight: bolder;
+}
+
 .nav {
     display: flex;
     position: sticky;
@@ -14,10 +24,10 @@
 }
 
 h1 {
-    font-family: 'New Rocker', cursive;
-    font-weight: bolder;
+    @extend %font-title;
     margin-bottom: 10px;
-    font-size: 3em;
+    font-size: 3.9em;
+    @extend %stroke;
 }
 
 .title {
@@ -26,7 +36,9 @@ h1 {
     margin-bottom: 2em;
     span {
         margin: 0;
-        font-family: 'New Rocker', cursive;
+        font-size: 2.4em;
+        @extend %font-title;
+        @extend %stroke;
     }
 }
 

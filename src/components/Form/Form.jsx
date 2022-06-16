@@ -48,9 +48,9 @@ const Form=()=>{
      console.log("se lanza el formulario", data);
      saveData()
      clearState();
-     setMessage("noticia creada con éxito");
+     setMessage("Noticia creada con éxito!!");
      setTimeout(() => {
-       navigate("/listNews");
+       navigate("/");
      }, 4000);
    };
    return (
