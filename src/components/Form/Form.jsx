@@ -15,6 +15,7 @@ const Form=()=>{
          section:"",
          body: "",
          author:"",
+         img:"",
          date:new Date()
        };
    const [data, setData] = useState(initialState);
@@ -95,6 +96,8 @@ const Form=()=>{
          value={data.author}
          name="author"
        /><br/>
+        <label htmlFor="img">Sube una imagen(opcional):</label><br/>
+       <input type="file" name='img'value={data.img} onChange={handleInputChange}/><br/>
        <button type="submit" disabled={btnDisabled}>
          Publicar noticia
        </button>

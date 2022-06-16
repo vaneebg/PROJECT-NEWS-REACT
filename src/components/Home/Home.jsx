@@ -9,7 +9,6 @@ const listNews=newsBack.map((notice) => { return ( <div className="noticeInvent"
       <p>{notice.author}</p>
       <span>{notice.date}</span>
       <div className="content">
-
       <p>{notice.body}</p>
       </div>
       </div>
