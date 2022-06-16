@@ -1,10 +1,10 @@
 import './Footer'
 import './Footer.scss'
-import img1 from '../assets/iconface.png'
-import img2 from '../assets/icontwitter.png'
-import img3 from '../assets/iconlinked.png'
-import img4 from '../assets/iconoig.png'
-import img5 from '../assets/icongit.png'
+import img1 from '../../assets/iconface.png'
+import img2 from '../../assets/icontwitter.png'
+import img3 from '../../assets/iconlinked.png'
+import img4 from '../../assets/iconoig.png'
+import img5 from '../../assets/icongit.png'
 
 const Footer=({info,copy,links})=>{
   const listLinks=links.map((link,indice)=>{<a key={indice} href="">{link}</a>})

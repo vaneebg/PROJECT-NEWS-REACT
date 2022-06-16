@@ -1,7 +1,7 @@
 import './Home'
 import './Home.scss'
-import gif from './assets/giphy.gif'
-import lines from './assets/lines.gif'
+import gif from '../../assets/giphy.gif'
+import lines from '../../assets/lines.gif'
 
 const Home=()=>{
 
