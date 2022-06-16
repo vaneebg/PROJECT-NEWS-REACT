@@ -113,20 +113,20 @@ La idea principal con la que he construido este proyecto es intentar emular la a
 
 Para el fondo general de la página, he escogido una imagen con efecto blur para que no entorpezca la lectura de las noticias:
 
-![foto](./project-news/src/assets/background3.jpg)
+![foto](./src/assets/background3.jpg)
 
 En cuanto al diseño en general, tiene un diseño basado en tarjetas que están levemente pintadas con transparencia. Además tienen un efecto hover que les pone un blanco más resaltado por si hay algún problema de lectura con el fondo semitransparente:
 
-![foto](./project-news/toReadme/noticias.png)
+![foto](./toReadme/noticias.png)
 
 
 El componente Home presenta el mismo diseño, solo que se han añadido algunos gif al principio y final de la página:
 
-![foto](./project-news/toReadme/home.png)
+![foto](./toReadme/home.png)
 
 Componente formulario:
 
-![foto](./project-news/toReadme/form.png)
+![foto](./toReadme/form.png)
 
 ----------
 # :green_book: Descripción del proyecto :green_book:
