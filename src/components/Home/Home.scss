@@ -30,3 +30,39 @@ h2 {
     flex-wrap: wrap;
     margin: 3em;
 }
+
+.home {
+    display: flex;
+}
+
+.image {
+    img {
+        width: 15em;
+    }
+}
+
+.titleHome {
+    font-family: 'Lexend Exa', sans-serif;
+    font-weight: bolder;
+    font-size: 1.4em;
+    text-decoration: overline;
+}
+
+.finalimg {
+    margin-top: -15em;
+    display: flex;
+    justify-content: space-between;
+    .image {
+        img {
+            height: 15em;
+        }
+    }
+}
+
+.left {
+    transform: rotate(180deg) scaleX(-1);
+}
+
+.right {
+    transform: rotate(180deg)
+}

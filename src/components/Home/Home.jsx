@@ -1,5 +1,7 @@
 import './Home'
 import './Home.scss'
+import gif from './assets/giphy.gif'
+import lines from './assets/lines.gif'
 const Home=()=>{
 
 const newsBack = JSON.parse(localStorage.getItem("NEWS"));
@@ -17,18 +19,28 @@ const listNews=newsBack.map((notice) => {return ( <div className="noticeInvent">
       )
        })
 
-  return (
+  return (<>
+    <span className='titleHome'>Noticias creadas por nuestros usuarios:</span>
     <div className='home'>
       <div className="image">
-
+    <img src={gif} alt="" />
       </div>
       <div className="print">
           {listNews}
       </div>
       <div className="image">
-        
+      <img src={gif} alt="" />
       </div>
     </div>
+    <div className="finalimg">
+    <div className="image">
+    <img src={lines} className='left' alt="" />
+      </div>
+      <div className="image">
+    <img src={lines} className='right' alt="" />
+      </div>
+      </div>
+    </>
   )
 }
 
