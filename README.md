@@ -1,4 +1,4 @@
-#  <center> :european_castle: Proyecto React: Web de noticias :european_castle: </center> 
+#  <center> :card_index: Proyecto React: Web de noticias :card_index: </center> 
 ``
  ## :clipboard: Índice :clipboard:
 
@@ -14,20 +14,15 @@
 
     - [Inspiración](#cinema-inspiración)
 
-- [Descripción del proyecto]()
+- [Descripción del proyecto](#greenbook-descripción-del-proyecto-greenbook)
+
 - [Retos presentados](#dart-retos-presentados-dart)
 
-    - [Borrar en cascada](#borrar-en-cascada)
+    - [Imágenes noticias](#imágenes-noticias)
 
-    - [Manejo de relación de documentos](#manejo-de-relación-de-documentos)
+    - [Formularios con input file](#formularios-con-input-file)
     
-    - [Validaciones](#validaciones)
-
-    - [Uso de heroku](#uso-de-heroku)
-
-    - [Nodemailer](#uso-de-nodemailer)
-
-    - [Swagger](#uso-de-swagger)
+    - [Documentación API](#documentación-api)
 
 
 - [Agradecimientos](#agradecimientos)
@@ -111,25 +106,25 @@ Se ha trabajado en diversas ramas de Git para continuar con el proceso de aprend
 
 -------------------
 ## :cinema: Inspiración 
-La idea principal con la que he construido este proyecto es intentar emular la apariencia de un periódico real. Para ello, he utilizado principalmente una paleta de diversos grises y también transparencias para la barra de navegación del header:
+La idea principal con la que he construido este proyecto es intentar emular la apariencia de un periódico real. Para ello, he utilizado principalmente una paleta de diversos grises y también transparencias para la barra de navegación del header, que he guardado dentro de colors.scss en forma de variables:
 ![foto](/project-news/toReadme/paleta.png)
 
 Para el fondo general de la página, he escogido una imagen con efecto blur para que no entorpezca la lectura de las noticias:
 ![foto](/project-news/src/assets/background2.jpg)
 
-En cuanto al diseño en general, he obtado por un diseño basado en tarjetas que están levemente pintadas con transparencia. Además tienen un efecto hover que les pone un blanco más resaltado por si hay algún problema de lectura con el fondo semitransparente:
+En cuanto al diseño en general, tiene un diseño basado en tarjetas que están levemente pintadas con transparencia. Además tienen un efecto hover que les pone un blanco más resaltado por si hay algún problema de lectura con el fondo semitransparente:
 ![foto](/project-news/toReadme/noticias.png)
 
 
-El componente Home tiene el mismo diseño, solo que se han añadido algunos gif al principio y final de la página:
+El componente Home presenta el mismo diseño, solo que se han añadido algunos gif al principio y final de la página:
 ![foto](/project-news/toReadme/home.png)
 
 Componente formulario:
 ![foto](/project-news/toReadme/form.png)
 
 ----------
-# Descripción del proyecto
-## 1.Componentes
+# :green_book: Descripción del proyecto :green_book:
+## 1. Componentes
 Son un total de 5 componentes:
 
 
@@ -155,10 +150,28 @@ const newsBack = JSON.parse(localStorage.getItem("NEWS"));
 ````
 
 ## 2.Context
-La parte fundamental sobre la que se sustenta el trabajo, con el objetivo de globalizar la información (en este caso la API) para poderla utilizar luego en cualquier de nuestros componentes gracias a GlobalProvider
+La parte fundamental sobre la que se sustenta el trabajo. Con el objetivo de globalizar la información (en este caso la API) para poderla utilizar luego en cualquier de nuestros componentes gracias a GlobalProvider. En este caso, solo hacemos una llamada a la API para conseguir las noticias, mediante esta función:
+`````
+const getNews = async () => {
+   
+    let url=`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${APIKEY}`
+    const result = await axios.get(url);
+    dispatch({
+      type: "GET_NEWS",
+      payload: result.data.results 
+    });
+  };
+  ``````
+  --------------------
+
 # :dart: Retos presentados :dart:
- ## Imágenes
- Algunos problemas al poner imágenes dentro de arrays y que las imprima sin importarlas antes con el uso de React.
+ ## Imágenes noticias
+ Algunos problemas al pintar las noticias en html ya que algunas iban sin una imagen, por tanto al hacer el método map, presentaban 'undefined'. Con este condicional se soluciona el problema:
+ ``````
+ {
+          notice.media.length !== 0 ? <img src={notice.media[0]["media-metadata"][0].url} alt='img'/> : null
+        }
+``````
 
  ## Formularios con input file
 Pese a que el input type=file sube las imágenes, al no estar usando una base de datos, sino que se están guardando en LocalStorage con un path, es complejo traerlas de nuevo al html.
@@ -171,7 +184,7 @@ Cada API cuenta con un procedimiento diferente, por lo que hay que informarse pr
 ------------------------------
 
 # :purple_heart: Agradecimientos :purple_heart:
-A los profes [Sofía](https://github.com/SofiaPinilla), y los dos TA [Germán](https://github.com/GeerDev), [Iván](https://github.com/ivanpuebla10).
+A los profes [Sofía](https://github.com/SofiaPinilla) e [Iván](https://github.com/ivanpuebla10) por ayudarme a las validaciones y a [Germán](https://github.com/GeerDev) por la ayuda para las variables de entorno en React.
 Y a todos mis compis de promoción por compartir momentos de risas y apoyo entre nosotros :smile: .
 Especial mención a [Imanol](https://github.com/Imi21) por darnos suuuper peluchitos de compitruenos para la programación.
 
