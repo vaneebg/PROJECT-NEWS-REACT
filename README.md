@@ -14,7 +14,7 @@
 
     - [Inspiración](#cinema-inspiración)
 
-
+- [Descripción del proyecto]()
 - [Retos presentados](#dart-retos-presentados-dart)
 
     - [Borrar en cascada](#borrar-en-cascada)
@@ -40,11 +40,12 @@
 
 
 ## :nut_and_bolt: Instalación y despliegue 
-Para el desarrollo de esta API se ha utilizado MongoDB junto con su ODM Mongoose mediante express en NodeJS.
+Para el desarrollo de este mini-proyecto se ha utilizado React principalmente.
 El proyecto se subirá a un repositorio público de GitHub.
+Además, cuenta con el registro en la siguiente API: [Nytimes](https://developer.nytimes.com/apis).
 Para instalar este proyecto debes hacer lo siguiente: primero acceder desde github al repositorio y proceder a clonártelo con el siguiente comando:
 
-git clone https://github.com/vaneebg/BACKEND_MONGODB_RED_SOCIAL
+git clone https://github.com/vaneebg/PROJECT-NEWS-REACT
 
 Una vez clonado el respositorio es muy importante que en tu consola instales todos los npm que necesita el proyecto con el siguiente comando: 
 ````
@@ -54,49 +55,37 @@ npm i
 Seguidamente, hay que crear un archivo .env que lleve lo siguiente:
 ```
 
-PORT = el puerto que utilizarás
-
-MONGO_URI = tu link para conectar con la base de datos MongoBD
-
-JWT_SECRET = tu secreto
-
-USER = el correo que utilizarás para enviar email con nodemailer
-PASS = tu contraseña del correo
+REACT_APP_APIKEY = que es la key que te proporciona la API una vez te has registrado
 
 ```
 
-Por último, procede a levantar el servidor con este comando:
+Por último, procede a levantar el servidor con este comando una vez estés dentro de la carpeta project-news:
 ```
 npm start
 ```
 
 ## :wrench: Tecnologias/packages utilizados 
 - Javascript
-- MongoDB
-- Node
-- Express
-- Mongoose
-- Nodemailer
-- Bcrypt
-- Jsonwebtoken
-- Multer
-- Postman
+- React
+- JSX
+- SASS
+- Context
+- UseReducer
+- React Router
+- Axios
+- Dotenv
 
 ## :dart: Origen 
-Es un proyecto de backend de la academia The Brigde para asentar conocimientos en todo el terreno de base de datos no relacionales con MongoDB conjuntamente con Node+Express y el ODM que utilizaremos: Mongoose. Ha consistido en desarrollar la base de datos de una red social conjuntamente con sus funcionalidades: tener seguidores, dar likes a posts o comentarios, etc.
+Es un proyecto de frontend de la academia The Brigde para asentar conocimientos sobre la utilización de React conjuntamente con context y useReducer. Aparte de esto, se trabajan aptitudes anteriores, como el uso de Axios para llamar a una API. Además, cobra más importancia el diseño con la utilización de SASS.
 
 
-Además de la utilización de estas tecnologías, se ha trabajado en diversas ramas de Git para continuar con el proceso de aprendizaje de esta herramienta y fomentar las buenas prácticas. Primeramente se ha creado la rama develop y, como en este caso ha sido un trabajo invididual, se ha trabajado desde esa misma rama.   Finalmente, cuando se prueba el proyecto entero desde develop, se comprueba que todo funciona y. si es el caso, se acaba añadiendo a la rama main.
+Se ha trabajado en diversas ramas de Git para continuar con el proceso de aprendizaje de esta herramienta y fomentar las buenas prácticas. Primeramente se ha creado la rama develop y, como en este caso ha sido un trabajo invididual, se ha trabajado desde esa misma rama.   Finalmente, cuando se prueba el proyecto entero desde develop, se comprueba que todo funciona y, si es el caso, se acaba añadiendo a la rama main.
 
-
-Para organizar el trabajo, se ha hecho uso de Trello para dividir las tareas y tener un planteamiento más tangible de las diferentes fases del proyecto:
-![foto](/uploadsreadme/Sin%20trello.png)
 
  
 ## :pushpin: Objetivos 
 
-
-Vamos a englobar todo lo visto estos días con un miniproyecto con React utilizando News API vista principal de la página
+1.1. Página de noticias
 - [X] Implementa React Router en tu página
     - [X] /home. Home de la app
     - [X] /form. Formulario para crear noticia
@@ -117,48 +106,86 @@ Vamos a englobar todo lo visto estos días con un miniproyecto con React utiliza
 - [X] Utilizar SASS
 - [X] Readme Excelente!!!
 
-1.2. Extra
+## 1.2. Extras
 - [ ] Que sea responsive
 
 -------------------
+## :cinema: Inspiración 
+La idea principal con la que he construido este proyecto es intentar emular la apariencia de un periódico real. Para ello, he utilizado principalmente una paleta de diversos grises y también transparencias para la barra de navegación del header:
+![foto](/project-news/toReadme/paleta.png)
 
+Para el fondo general de la página, he escogido una imagen con efecto blur para que no entorpezca la lectura de las noticias:
+![foto](/project-news/src/assets/background2.jpg)
+
+En cuanto al diseño en general, he obtado por un diseño basado en tarjetas que están levemente pintadas con transparencia. Además tienen un efecto hover que les pone un blanco más resaltado por si hay algún problema de lectura con el fondo semitransparente:
+![foto](/project-news/toReadme/noticias.png)
+
+
+El componente Home tiene el mismo diseño, solo que se han añadido algunos gif al principio y final de la página:
+![foto](/project-news/toReadme/home.png)
+
+Componente formulario:
+![foto](/project-news/toReadme/form.png)
+
+----------
+# Descripción del proyecto
+## 1.Componentes
+Son un total de 5 componentes:
+
+
+Dos de ellos se encuentran fijados para aparecer siempre independientemente del componente al que te hayas dirigido:
+- Header: consta de 2 partes: por un lado, una barra de navegación con posición sticky semitransparente que te lleva a los apartados de la web. Por otro lado, está el título principal de la página "Noticiario casero made in VB".
+- Footer: consta del nombre del autor junto con el año de creación. A mano derecha hay una serie de links dispuestos como iconos que redireccionan a las diferentes redes sociales (solo en funcionamiento real github y linkedin).
+    Finalmente hay una serie de links no funcionales para simular el pie de página de varias webs.
+
+- Form: Un formulario con diversos input, tanto tipo texto, como un select para asignar la sección de tu noticia y un input type:file para poder subir una imagen. Además, dentro del mismo está la siguiente función con el objetivo de guardar en el localStorage la información introducida en el formulario:
+````
+let writeNew = JSON.parse(localStorage.getItem("NEWS")) || [];
+  const saveData=() =>{
+       writeNew.push(data);
+       localStorage.setItem("NEWS", JSON.stringify(writeNew));
+     }
+````
+
+- ListNews: Se encarga principalmente de pintar las noticias que ha recibido de la API.
+
+- Home: se encarga de pintar las noticias que se han ido almacenando en el localStorage mediante la siguiente función:
+````
+const newsBack = JSON.parse(localStorage.getItem("NEWS"));
+````
+
+## 2.Context
+La parte fundamental sobre la que se sustenta el trabajo, con el objetivo de globalizar la información (en este caso la API) para poderla utilizar luego en cualquier de nuestros componentes gracias a GlobalProvider
 # :dart: Retos presentados :dart:
- ## Borrar en cascada
- Fue importante un buen entendimiento de los parámetros y qué se necesitaba para que cuando un usuario se borrase, todo su contenido fuese igual. Lo mismo sucede al borrar un post, todos sus comentarios se borran también de la base de datos.
+ ## Imágenes
+ Algunos problemas al poner imágenes dentro de arrays y que las imprima sin importarlas antes con el uso de React.
 
- ## Manejo de relación de documentos
-Al utilizar ahora una base de datos no relacional, había que adaptar los conocimientos que teníamos de sequelize con include, para ponerlos aquí mediante el método de populate. Además, rellenar cada modelo con un array de elementos, en el caso por ejemplo de que un usuario puede tener varios post, al igual que un post solo podría pertenecer a un usuario, por lo que en esta relación no había array, sino un objeto solamente.
-
-## Validaciones
-Tener en cuenta qué acciones te permite realizar una red social y cuáles no. Por ejemplo, un usuario sí puede darle like a su propio post, sin embargo no se puede seguir a sí mismo. Además, restringir los likes a uno solo, con el objetivo de evitar que un mismo usuario pueda llenar del mismo like a un post.
-
-## Uso de heroku
-Aprender a desplegar una API mediante el uso de Heroku como herramienta nueva. La API está desplegada en: https://red-social-vaneebg.herokuapp.com/
-
-## Uso de nodemailer
-En este caso, pese a que lo habíamos utilizado ya antes, las nuevas restricciones de google para las cuentas de gmail, han hecho que tngamos varios problemas. Finalmente, se cambió la configuración de nodemailer para que acepte correos de outlook y poder trabajar desde ahí.
+ ## Formularios con input file
+Pese a que el input type=file sube las imágenes, al no estar usando una base de datos, sino que se están guardando en LocalStorage con un path, es complejo traerlas de nuevo al html.
 
 
-## Uso de Swagger
-Aprender a documentar los endpoints dentro de esta nueva herramienta, cerrando correctamente cada endpoint. Hecho el CRUD de comentarios entero: http://localhost:8080/api-docs/#/Comments
+## Documentación API
+Cada API cuenta con un procedimiento diferente, por lo que hay que informarse previamente de cómo funciona y qué necesitas para traer los datos que quieres.
+
 
 ------------------------------
 
 # :purple_heart: Agradecimientos :purple_heart:
-A la lead instructor [Sofía](https://github.com/SofiaPinilla), y los dos TA [Germán](https://github.com/GeerDev), [Iván](https://github.com/ivanpuebla10) por ayudarme a ponerme al día en clase cuando he tenido algún asunto de salud, y por solucionar algunos bugs y explicármelos.
-A [Xavi](https://github.com/xavi-mat) y a [Ger](https://github.com/Molerog) compi por su gran manejo de Swagger :smile: .
+A los profes [Sofía](https://github.com/SofiaPinilla), y los dos TA [Germán](https://github.com/GeerDev), [Iván](https://github.com/ivanpuebla10).
+Y a todos mis compis de promoción por compartir momentos de risas y apoyo entre nosotros :smile: .
+Especial mención a [Imanol](https://github.com/Imi21) por darnos suuuper peluchitos de compitruenos para la programación.
 
 ----------------
 
 # :black_nib: Futuras implementaciones :black_nib:
 
-- [ ] Implementación de frontend
+- [ ] Responsive
 
-- [ ] Ampliar las funciones del admin en la red social, por ejemplo, borrar cualquier post.
+- [ ] Creación de componentes hijos que dividan las funciones del componente padre.
 
-- [ ] Sistema de testing con Jest.
+- [ ] Pintar en html la imagen guardada en LocalStorage.
 
-- [ ] Borrado en cascada para comentarios hechos en otros posts.
+
 
 ----------------------
 
