@@ -118,7 +118,7 @@ Se ha trabajado en diversas ramas de Git para continuar con el proceso de aprend
 -------------------
 ## :cinema: Inspiración 
 La idea principal con la que he construido este proyecto es intentar emular la apariencia de un periódico real. Para ello, he utilizado principalmente una paleta de diversos grises y también transparencias para la barra de navegación del header, que he guardado dentro de colors.scss en forma de variables:
-![foto](/project-news/toReadme/form.png)
+![foto](./toReadme/paleta.png)
 
 Para el fondo general de la página, he escogido una imagen con efecto blur para que no entorpezca la lectura de las noticias:
 
